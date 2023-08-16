@@ -14,6 +14,11 @@ const { connectDb } = require("./db/dbconnection");
 const routes = require("./routes/index.js");
 const config = require("./config/config");
 
+const app = express();
+
+
+app.use("/v1", routes);
+
 connectDb();
 
 
