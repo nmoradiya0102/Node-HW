@@ -21,6 +21,11 @@ app.use("/v1", routes);
 
 connectDb();
 
+/** whenever route not created and you try to use that route then throw error. */
+app.use((req, res, next) => {
+  next(new Error("Route not found!"));
+});
+
 
 /** create server using http */
 const server = http.createServer(app);

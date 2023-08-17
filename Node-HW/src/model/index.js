@@ -1,3 +1,4 @@
 module.exports.User = require("./user.model");
-module.exports.category = require("./category.model");
-module.exports.product = require("./product.model");
+module.exports.Category = require("./category.model");
+module.exports.Product = require("./product.model");
+module.exports.Token = require("./token.model");
