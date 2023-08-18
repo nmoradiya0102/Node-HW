@@ -1,5 +1,8 @@
 const { options } = require("joi");
+const Category = require("../models/category.model");
 const { categoryService } = require("../services");
+
+
 const createCategory = async (req , res) => {
     try{
         const reqBody =red.Body;

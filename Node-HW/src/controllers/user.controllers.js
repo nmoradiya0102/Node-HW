@@ -48,7 +48,46 @@ const getUserList = async (req, res) => {
     }
   };
 
+  /** Get user details by Id */
+
+  const getuserDetails = async(req , res) =>{
+    try{
+      const getDetails = await userService.getUserById(req.params.userId);
+      if(!getDetails){
+        throw new error("user not found..!");
+      }
+      res.status(200).json({
+        success : true,
+        message : "user details get successfully..!",
+        data : getDetails,
+      });
+    } catch (error){
+      res.status(400).json({success : false , message : error.message});
+    }
+  };
+
+
+  /** user details update by id */
+  const updateDetails = async (req , res) =>{
+    try{
+      const userId = req.params.userId;
+      const userExists = await userService.getUserById(userId);
+      if(!userExists){
+        throw new Error("user not found..!");
+      }
+      await userService.updateDetails(userId , req.body);
+      res
+      .status(200)
+      .json({success : true , message : "user details update successfully..!"});
+    } catch(error){
+      res.status(400).json({success : false , message : error.message});
+    }
+  };
+
+
   module.exports = {
-    createUser,
+    crateUser,
     getUserList,
+    getuserDetails,
+    updateDetails,
   };

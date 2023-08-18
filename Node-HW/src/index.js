@@ -16,7 +16,6 @@ const config = require("./config/config");
 
 const app = express();
 
-
 app.use("/v1", routes);
 
 connectDb();
@@ -28,8 +27,16 @@ app.use((req, res, next) => {
 
 
 /** create server using http */
-const server = http.createServer(app);
+// const server = http.createServer(app);
 
-server.listen(config.port, () => {
-  console.log("server listning port number 3000!");
+// server.listen(config.port, () => {
+//   console.log("server listning port number 3000!");
+// });
+
+
+const server = http.createServer((req ,  res ) => {
+  res.end("Hello from the other sides");
+});
+server.listen(8000 ,"127.0.0.1" , () => {
+  console.log("listening to the port no 8000");
 });
