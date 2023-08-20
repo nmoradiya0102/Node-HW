@@ -84,10 +84,53 @@ const getUserList = async (req, res) => {
     }
   };
 
+  /** Delete user */
+  const deleteUser = async (req, res) => {
+    try {
+      const userId = req.params.userId;
+      const userExists = await userService.getUserById(userId);
+      if (!userExists) {
+        throw new Error("User not found!");
+      }
+
+      await userService.deleteUser(userId);
+
+      res.status(200).json({
+        success: true,
+        message: "User delete successfully!",
+      });
+    } catch (error) {
+      res.status(400).json({ success: false, message: error.message });
+    }
+  };
+
+  /** Send mail to reqested email */
+  const sendMail = async (req, res) => {
+    try {
+      const reqBody = req.body;
+      const sendEmail = await emailService.sendMail(
+        reqBody.email,
+        reqBody.subject,
+        reqBody.text
+      );
+      if (!sendEmail) {
+        throw new Error("Something went wrong, please try again or later.");
+      }
+
+      res
+        .status(200)
+        .json({ success: true, message: "Email send successfully!" });
+    } catch (error) {
+      res.status(400).json({ success: false, message: error.message });
+    }
+  };
+
 
   module.exports = {
     crateUser,
     getUserList,
     getuserDetails,
     updateDetails,
+    deleteUser,
+    sendMail,
   };
