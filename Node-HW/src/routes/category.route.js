@@ -5,7 +5,7 @@ const validate  = require("../middlewares/validate");
 const router = require(".");
 const { category } = require("../models");
 
-const router = express.router()
+const router = express.Router()
 
 router.get(
     "/list",
