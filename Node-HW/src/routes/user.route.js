@@ -23,7 +23,7 @@ router.get(
 router.get(
   "/get-details/:userId",
   validate(userValidation.getDetails),
-  userController.getUserDetails
+  userController.getuserDetails
 );
 
 /** user details update by id */

@@ -1,7 +1,7 @@
 const { userService } = require("../services");
 
 // create user
-const crateUser = async (req , res) => {
+const createUser = async (req , res) => {
     try{
         const reqBody = req.body;
         const userExists = await userService.getUserByEmail(reqBody.email);
@@ -127,7 +127,7 @@ const getUserList = async (req, res) => {
 
 
   module.exports = {
-    crateUser,
+    createUser,
     getUserList,
     getuserDetails,
     updateDetails,

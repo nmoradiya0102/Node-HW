@@ -1,7 +1,7 @@
 const mongoose = require ("mongoose");
 const config = require("../config/config");
 
-const connectDb = async () =>{
+const connectDB = async () =>{
     mongoose
     .connect(config.mongodb.url, config.mongodb.options)
     .then((data) => {
@@ -12,4 +12,4 @@ const connectDb = async () =>{
     });
 };
 
-module.exports = {connectDb};
+module.exports = {connectDB};
