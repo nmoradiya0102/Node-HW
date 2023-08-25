@@ -1,18 +1,18 @@
-const joi = require("joi");
+const Joi = require("joi");
 
 const createCategory = {
-    body : joi.object().keys({
-        category_name : joi.string().required().trim(),
-        category_desc : joi.string().required().trim()
+    body : Joi.object().keys({
+        category_name : Joi.string().required().trim(),
+        category_desc : Joi.string().required().trim()
     })
 };
 
 // const getCategoryList = {
-//     query : Joi.object().keys({
-//     search : Joi.string().trim().allow(""),
-//     sortBy : Joi.string().trim().allow(""),
-//     limit : Joi.number().integer().allow(""),
-//     page : Joi.number().integer().allow(""),
+//     query : joi.object().keys({
+//     search : joi.string().trim().allow(""),
+//     sortBy : joi.string().trim().allow(""),
+//     limit : joi.number().integer().allow(""),
+//     page : joi.number().integer().allow(""),
 //     }),
 // };
 

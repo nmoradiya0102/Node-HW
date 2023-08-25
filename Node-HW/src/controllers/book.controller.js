@@ -1,15 +1,15 @@
 // const { options } = require("joi");
-const bookService = require("../services/book.service.js");
+const {bookService} = require("../services");
 
-const create_book_controller = async (req , res) =>{
+const create_book_controller = async(req,res) => {
     try{
         const reqBody = req.body;
         const book = await bookService.createBook(reqBody);
-
+        console.log(book);
         res.status(200).json({
             success : true,
             message : "Book create Successfully..!",
-            data : { book },
+            data : book ,
         });
     } catch(error) {
         res.status(400).json({success : false , message : error.message});

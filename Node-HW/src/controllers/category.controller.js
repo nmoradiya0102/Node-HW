@@ -1,12 +1,11 @@
-const { options } = require("joi");
-const Category = require("../models/category.model");
-const { categoryService ,userService } = require("../services");
+// const { options } = require("joi");
+// const Category = require("../models");
+const { categoryService } = require("../services");
 
 
 const createCategory = async (req , res) => {
     try{
-        const reqBody =req.Body;
-        console.log(reqBody , '==========');
+        const reqBody = req.body;
 
         const category = await categoryService.createCategory(reqBody);
         res.status(200).json({

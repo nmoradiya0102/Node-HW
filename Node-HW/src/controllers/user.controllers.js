@@ -8,7 +8,7 @@ const createUser = async (req , res) => {
         if(userExists){
             throw new Error("User already create by this email..!");
         }
-        const user = await userService.crateUser(reqBody);
+        const user = await userService.createUser(reqBody);
         if(!user){
             throw new Error("Something went wrong, please try again or later...!");
         }
@@ -36,12 +36,12 @@ const getUserList = async (req, res) => {
         ];
       }
 
-      const getList = await userService.getUserList(filter, options);
+      const getList = await userService.getUserList();
 
       res.status(200).json({
         success: true,
         message: "Get user list successfully!",
-        data: getList,
+        data: {getList},
       });
     } catch (error) {
       res.status(400).json({ success: false, message: error.message });
