@@ -6,3 +6,6 @@ module.exports.bookService = require("./book.service");
 module.exports.busService = require("./bus.service");
 module.exports.hotelService = require("./hotel.service");
 module.exports.schoolService = require("./school.service");
+module.exports.travelService = require("./travel.service");
+module.exports.movieService = require("./movie.service");
+module.exports.stationeryService = require("./stationery.service");

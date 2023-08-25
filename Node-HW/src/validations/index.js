@@ -5,3 +5,6 @@ module.exports.bookValidation = require("./book.validation");
 module.exports.busValidation = require("./bus.validation");
 module.exports.hotelValidation = require("./hotel.validation");
 module.exports.schoolValidation = require("./school.Validation");
+module.exports.travelValidation = require("./travel.validation");
+module.exports.movieValidation = require("./movie.validation");
+module.exports.stationeryValidation = require("./stationery.validation");

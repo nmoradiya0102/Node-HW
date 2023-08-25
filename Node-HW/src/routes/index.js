@@ -5,6 +5,9 @@ const bookRoute = require("./book.route");
 const busRoute = require("./bus.route");
 const hotelRoute = require("./hotel.route");
 const schoolRoute = require("./school.route");
+const travelRoute = require("./travel.route");
+const movieRoute = require("./movie.route");
+const stationeryRoute = require("./stationery.route");
 const router = express.Router();
 
 router.use("/user", userRoute);
@@ -13,5 +16,7 @@ router.use("/book" , bookRoute);
 router.use("/bus", busRoute);
 router.use("/hotel" , hotelRoute);
 router.use("/school" , schoolRoute);
-
+router.use("/travel" , travelRoute);
+router.use("/movie" , movieRoute);
+router.use("/stationery" , stationeryRoute);
 module.exports = router;

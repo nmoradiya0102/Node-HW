@@ -6,3 +6,6 @@ module.exports.Book = require("./book.model");
 module.exports.Bus = require("./bus.model");
 module.exports.Hotel = require("./hotel.model");
 module.exports.School = require("./school.model");
+module.exports.Travel = require("./travel.model");
+module.exports.Movie = require("./movie.model");
+module.exports.Stationary = require("./stationary.model");
