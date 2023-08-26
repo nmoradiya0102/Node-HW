@@ -16,8 +16,9 @@ const createHotel = async (reqBody) => {
  * @returns {Promise<Hotel>}
  */
 const getHotelList = async (filter, options) => {
-  // const skip = (Number(options.page || 1) - 1) * Number(options.limit || 10);
-  return Hotel.find(filter);
+  const skip = (Number(options.page || 1) - 1) * Number(options.limit || 10);
+
+  return Hotel.find(filter).skip(skip).limit(options.limit).select("-password");
 };
 
 /**

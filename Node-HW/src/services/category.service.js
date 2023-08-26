@@ -16,8 +16,8 @@ const createCategory = async (reqBody) => {
  * @returns {Promise<User>}
  */
 const getCategoryList = async (filter,options) => {
-    // const skip = (Number(options.page || 1) - 1) * Number(options.limit || 10);
-    return Category.find(filter);
+    const skip = (Number(options.page || 1) - 1) * Number(options.limit || 10);
+    return Category.find(filter).skip(skip).limit(options.limit);
 };
 
 const deleteCategory = async (categoryId) => {
@@ -30,7 +30,7 @@ const getCategoryById = async (categoryId) => {
 
 const getCategoryByName = async(categoryName) => {
   return Category.findOne({ categoryName });
-};
+}
 
 const updateDetails = async (categoryId, updateBody) => {
   return Category.findByIdAndUpdate(categoryId, { $set: updateBody });
