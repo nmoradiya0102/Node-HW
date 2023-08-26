@@ -17,7 +17,7 @@ const createMusic = async (reqBody) => {
  */
 const getMusicList = async (filter, options) => {
   // const skip = (Number(options.page || 1) - 1) * Number(options.limit || 10);
-  return Music.find(filter);
+  return Music.find({$or:[{is_active:true}]});
 };
 
 /**

@@ -17,7 +17,7 @@ const createGrocery = async (reqBody) => {
  */
 const getGroceryList = async (filter, options) => {
   // const skip = (Number(options.page || 1) - 1) * Number(options.limit || 10);
-  return Grocery.find(filter);
+  return Grocery.find({$or:[{is_active:true}]});
 };
 
 /**

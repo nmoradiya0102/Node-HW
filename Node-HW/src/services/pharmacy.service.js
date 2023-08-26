@@ -17,7 +17,7 @@ const createPharmacy = async (reqBody) => {
  */
 const getPharmacyList = async (filter, options) => {
   // const skip = (Number(options.page || 1) - 1) * Number(options.limit || 10);
-  return Pharmacy.find(filter);
+  return Pharmacy.find({$or:[{is_active:true}]});
 };
 
 /**
