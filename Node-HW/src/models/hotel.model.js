@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-// const bcrypt = require("bcryptjs");
 
+/** hotel Schema */
 const hotelSchema = new mongoose.Schema(
   {
     hotel_name: {

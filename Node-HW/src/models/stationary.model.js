@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+/** stationery Schema */
 const stationerySchema = new mongoose.Schema(
     {
         stationery_name : {

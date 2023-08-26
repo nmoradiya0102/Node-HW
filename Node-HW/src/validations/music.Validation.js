@@ -10,7 +10,7 @@ const createMusic = {
   }),
 };
 
-/** GEt music list */
+/** Get music list */
 const getMusicList = {
   query: Joi.object().keys({
     search: Joi.string().trim().allow(""),

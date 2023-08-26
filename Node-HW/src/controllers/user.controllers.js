@@ -1,6 +1,6 @@
 const { userService } = require("../services");
 
-// create user
+/** create user */
 const createUser = async (req , res) => {
     try{
         const reqBody = req.body;
@@ -49,7 +49,6 @@ const getUserList = async (req, res) => {
   };
 
   /** Get user details by Id */
-
   const getuserDetails = async(req , res) =>{
     try{
       const getDetails = await userService.getUserById(req.params.userId);
@@ -65,7 +64,6 @@ const getUserList = async (req, res) => {
       res.status(400).json({success : false , message : error.message});
     }
   };
-
 
   /** user details update by id */
   const updateDetails = async (req , res) =>{

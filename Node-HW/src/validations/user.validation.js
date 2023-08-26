@@ -11,7 +11,7 @@ const createUser = {
   }),
 };
 
-/** GEt user list */
+/** Get user list */
 const getUserList = {
   query: Joi.object().keys({
     search: Joi.string().trim().allow(""),

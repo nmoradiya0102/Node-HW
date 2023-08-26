@@ -11,7 +11,7 @@ const createBus = {
   }),
 };
 
-/** GEt bus list */
+/** Get bus list */
 const getBusList = {
   query: Joi.object().keys({
     search: Joi.string().trim().allow(""),

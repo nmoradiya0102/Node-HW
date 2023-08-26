@@ -11,7 +11,7 @@ const createJewellery = {
   }),
 };
 
-/** GEt jewellery list */
+/** Get jewellery list */
 const getJewelleryList = {
   query: Joi.object().keys({
     search: Joi.string().trim().allow(""),

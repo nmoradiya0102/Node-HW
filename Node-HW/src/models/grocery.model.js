@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+/** grocery Schema */
 const grocerySchema = new mongoose.Schema(
     {
         grocery_store_name : {

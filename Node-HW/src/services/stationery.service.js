@@ -17,7 +17,6 @@ const createStationery = async (reqBody) => {
  */
 const getStationeryList = async (filter, options) => {
   // const skip = (Number(options.page || 1) - 1) * Number(options.limit || 10);
-
   return Stationery.find();
 };
 

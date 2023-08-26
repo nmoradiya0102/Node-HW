@@ -1,6 +1,6 @@
 const { pharmacyService } = require("../services");
 
-/** create stationery */
+/** create Pharmacy */
 const createPharmacy = async (req, res) => {
   try {
     const reqBody = req.body;

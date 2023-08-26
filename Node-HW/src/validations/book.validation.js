@@ -1,5 +1,6 @@
 const Joi = require("joi");
 
+/** Create book */
 const create_book_validation = {
     body : Joi.object().keys({
         book_name : Joi.string().required().trim(),

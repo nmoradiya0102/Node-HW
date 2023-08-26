@@ -11,7 +11,7 @@ const createPharmacy = {
   }),
 };
 
-/** GEt pharmacy list */
+/** Get pharmacy list */
 const getPharmacyList = {
   query: Joi.object().keys({
     search: Joi.string().trim().allow(""),

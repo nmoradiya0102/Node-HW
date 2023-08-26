@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+/** pharmacy Schema */
 const pharmacySchema = new mongoose.Schema(
     {
         pharmacy_name : {

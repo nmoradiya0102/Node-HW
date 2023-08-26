@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+/** music Schema */
 const musicSchema = new mongoose.Schema(
     {
         music_name : {

@@ -1,4 +1,4 @@
-// const { options } = require("joi");
+//*  Create Book services */
 const {bookService} = require("../services");
 
 const create_book_controller = async(req,res) => {
@@ -15,7 +15,7 @@ const create_book_controller = async(req,res) => {
         res.status(400).json({success : false , message : error.message});
     }
 };
-
+//* get book  */
 const get_book_Controller = async(req , res) =>{
     try{
         const{ search, ...options} = req.query;

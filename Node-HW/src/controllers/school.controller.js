@@ -41,6 +41,7 @@ const getSchoolList = async (req, res) => {
     res.status(400).json({ success: false, message: error.message });
   }
 };
+
 /** Get school details by id */
 const getSchoolDetails = async (req, res) => {
   try {

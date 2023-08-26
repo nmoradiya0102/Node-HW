@@ -11,7 +11,7 @@ const createStationery = {
   }),
 };
 
-/** GEt stationery list */
+/** Get stationery list */
 const getStationeryList = {
   query: Joi.object().keys({
     search: Joi.string().trim().allow(""),

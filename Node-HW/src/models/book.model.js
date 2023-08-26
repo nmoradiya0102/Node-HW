@@ -1,6 +1,6 @@
-// const { string } = require("joi");
 const mongoose = require("mongoose");
 
+/** book Schema */
 const book_Schema = new mongoose.Schema(
     {
         book_name : {

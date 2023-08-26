@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+/** bus Schema */
 const busSchema = new mongoose.Schema(
     {
         bus_name : {

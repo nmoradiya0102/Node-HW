@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-// const bcrypt = require("bcryptjs");
 
+/** school Schema */
 const schoolSchema = new mongoose.Schema(
     {
         school_name : {

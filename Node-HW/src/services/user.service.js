@@ -15,7 +15,6 @@ const createUser = async (reqBody) => {
  */
 const getUserList = async () => {
   // const skip = (Number(options.page || 1) - 1) * Number(options.limit || 10);
-
   return User.find();
 };
 

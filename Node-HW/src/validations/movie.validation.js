@@ -12,7 +12,7 @@ const createMovie = {
   }),
 };
 
-/** GEt movie list */ 
+/** Get movie list */
 const getMovieList = {
   query: Joi.object().keys({
     search: Joi.string().trim().allow(""),

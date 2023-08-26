@@ -41,6 +41,7 @@ const getStationeryList = async (req, res) => {
     res.status(400).json({ success: false, message: error.message });
   }
 };
+
 /** Get stationery details by id */
 const getStationeryDetails = async (req, res) => {
   try {

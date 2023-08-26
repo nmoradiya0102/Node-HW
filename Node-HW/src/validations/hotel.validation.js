@@ -11,7 +11,7 @@ const createHotel = {
   }),
 };
 
-/** GEt hotel list */
+/** Get hotel list */
 const getHotelList = {
   query: Joi.object().keys({
     search: Joi.string().trim().allow(""),

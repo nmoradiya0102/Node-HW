@@ -19,8 +19,8 @@ const createBook = async(reqBody) => {
  */
 
 const getbooklist = async (filter,options) => {
-    const skip = (Number(options.page || 1) - 1) * Number(options.limit || 10);
-    return Book.find(filter).skip(skip).limit(options.limit);
+    // const skip = (Number(options.page || 1) - 1) * Number(options.limit || 10);
+    return Book.find(filter);
 };
 
 module.exports = {

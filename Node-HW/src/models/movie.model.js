@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+/** movie Schema */
 const movieSchema = new mongoose.Schema(
     {
         movie_theatre_name : {

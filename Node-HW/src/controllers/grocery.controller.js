@@ -41,6 +41,7 @@ const getGroceryList = async (req, res) => {
     res.status(400).json({ success: false, message: error.message });
   }
 };
+
 /** Get grocery details by id */
 const getGroceryDetails = async (req, res) => {
   try {

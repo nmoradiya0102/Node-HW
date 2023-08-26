@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+/** jewellery Schema */
 const jewellerySchema = new mongoose.Schema(
     {
         jewellery_shop_name : {

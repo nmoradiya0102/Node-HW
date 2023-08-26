@@ -11,7 +11,7 @@ const createTravel = {
   }),
 };
 
-/** GEt travel list */
+/** Get travel list */
 const getTravelList = {
   query: Joi.object().keys({
     search: Joi.string().trim().allow(""),

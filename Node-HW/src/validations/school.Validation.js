@@ -11,7 +11,7 @@ const createSchool = {
   }),
 };
 
-/** GEt school list */
+/** Get school list */
 const getSchoolList = {
   query: Joi.object().keys({
     search: Joi.string().trim().allow(""),

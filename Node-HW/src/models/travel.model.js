@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+/** travel Schema */
 const travelSchema = new mongoose.Schema(
     {
         travel_name : {

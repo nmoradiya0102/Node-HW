@@ -1,6 +1,6 @@
 const { jewelleryService } = require("../services");
 
-/** create jewellery */
+/** create Jewellery */
 const createJewellery = async (req, res) => {
   try {
     const reqBody = req.body;
@@ -41,7 +41,7 @@ const getJewelleryList = async (req, res) => {
   }
 };
 
-/** Get jewellery details by id */
+/** Get Jewellery details by id */
 const getJewelleryDetails = async (req, res) => {
   try {
     const getDetails = await jewelleryService.getJewelleryById(req.params.userId);

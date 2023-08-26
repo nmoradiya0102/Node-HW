@@ -16,9 +16,8 @@ const createBus = async (reqBody) => {
  * @returns {Promise<Bus>}
  */
 const getBusList = async (filter, options) => {
-  const skip = (Number(options.page || 1) - 1) * Number(options.limit || 10);
-
-  return Bus.find(filter).skip(skip).limit(options.limit).select("-password");
+  // const skip = (Number(options.page || 1) - 1) * Number(options.limit || 10);
+  return Bus.find(filter);
 };
 
 /**
@@ -47,7 +46,6 @@ const getBusById = async (busId) => {
 const deleteBus = async (busId) => {
   return Bus.findByIdAndDelete(busId);
 };
-
 
 
 module.exports = {
