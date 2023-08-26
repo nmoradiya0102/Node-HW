@@ -1,24 +1,24 @@
 const mongoose = require("mongoose");
 
-const stationerySchema = new mongoose.Schema(
+const pharmacySchema = new mongoose.Schema(
     {
-        stationery_name : {
+        pharmacy_name : {
             type : String,
             trim : true
         },
-        stationery_address : {
+        pharmacy_address : {
             type : String,
             trim : true
         },
-        stationery_order_quantity :{
+        pharmacy_opeaning_hours :{
             type : String,
             trim : true
         },
-        stationery_items_name : {
+        pharmacy_product_name : {
             type : String,
             trim : true
         },
-        stationery_items_price : {
+        pharmacy_product_price : {
             type : Number,
             default : 0
         },
@@ -33,5 +33,5 @@ const stationerySchema = new mongoose.Schema(
       }
 );
 
-const Stationery = mongoose.model("stationery", stationerySchema);
-module.exports = Stationery;
+const Pharmacy = mongoose.model("pharmacy", pharmacySchema);
+module.exports = Pharmacy;

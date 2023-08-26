@@ -1,18 +1,18 @@
 const Joi = require("joi");
 
-/** create stationery */
-const createStationery = {
+/** create jewellery */
+const createJewellery = {
   body: Joi.object().keys({
-    stationery_name: Joi.string().required().trim(),
-    stationery_address: Joi.string().required().trim(),
-    stationery_order_quantity : Joi.string().required().trim(),
-    stationery_items_name: Joi.string().required().trim(),
-    stationery_items_price:Joi.number().integer().required(),
+    jewellery_shop_name : Joi.string().required().trim(),
+    jewellery_type : Joi.string().required().trim(),
+    jewellery_name :  Joi.string().required().trim(),
+    jewellery_design : Joi.string().required().trim(),
+    jewellery_price : Joi.number().integer().required(),
   }),
 };
 
-/** GEt stationery list */
-const getStationeryList = {
+/** GEt jewellery list */
+const getJewelleryList = {
   query: Joi.object().keys({
     search: Joi.string().trim().allow(""),
     sortBy: Joi.string().trim().allow(""),
@@ -21,10 +21,10 @@ const getStationeryList = {
   }),
 };
 
-/** Get stationery details by id */
+/** Get jewellery details by id */
 const getDetails = {
   params: Joi.object().keys({
-    stationeryId: Joi.string().required().trim(),
+    jewelleryId: Joi.string().required().trim(),
   }),
 };
 
@@ -39,8 +39,8 @@ const sendMail = {
 };
 
 module.exports = {
-  createStationery,
-  getStationeryList,
+  createJewellery,
+  getJewelleryList,
   getDetails,
   sendMail,
 };

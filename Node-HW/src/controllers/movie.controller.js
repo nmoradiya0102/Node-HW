@@ -25,8 +25,8 @@ const getMovieList = async (req, res) => {
 
     if (search) {
       filter.$or = [
-        { first_name: { $regex: search, $options: "i" } },
-        { last_name: { $regex: search, $options: "i" } },
+        { movie_theatre_name : { $regex: search, $options: "i" } },
+        { movie_name : { $regex: search, $options: "i" } },
       ];
     }
 

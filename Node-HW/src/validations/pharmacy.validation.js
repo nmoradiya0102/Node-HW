@@ -1,18 +1,18 @@
 const Joi = require("joi");
 
-/** create stationery */
-const createStationery = {
+/** create pharmacy */
+const createPharmacy = {
   body: Joi.object().keys({
-    stationery_name: Joi.string().required().trim(),
-    stationery_address: Joi.string().required().trim(),
-    stationery_order_quantity : Joi.string().required().trim(),
-    stationery_items_name: Joi.string().required().trim(),
-    stationery_items_price:Joi.number().integer().required(),
+    pharmacy_name: Joi.string().required().trim(),
+    pharmacy_address: Joi.string().required().trim(),
+    pharmacy_opeaning_hours : Joi.string().required().trim(),
+    pharmacy_product_name: Joi.string().required().trim(),
+    pharmacy_product_price: Joi.number().integer().required(),
   }),
 };
 
-/** GEt stationery list */
-const getStationeryList = {
+/** GEt pharmacy list */
+const getPharmacyList = {
   query: Joi.object().keys({
     search: Joi.string().trim().allow(""),
     sortBy: Joi.string().trim().allow(""),
@@ -21,10 +21,10 @@ const getStationeryList = {
   }),
 };
 
-/** Get stationery details by id */
+/** Get pharmacy details by id */
 const getDetails = {
   params: Joi.object().keys({
-    stationeryId: Joi.string().required().trim(),
+    pharmacyId: Joi.string().required().trim(),
   }),
 };
 
@@ -39,8 +39,8 @@ const sendMail = {
 };
 
 module.exports = {
-  createStationery,
-  getStationeryList,
+  createPharmacy,
+  getPharmacyList,
   getDetails,
   sendMail,
 };

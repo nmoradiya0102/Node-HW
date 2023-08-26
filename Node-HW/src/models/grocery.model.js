@@ -1,30 +1,22 @@
 const mongoose = require("mongoose");
 
-const movieSchema = new mongoose.Schema(
+const grocerySchema = new mongoose.Schema(
     {
-        movie_theatre_name : {
+        grocery_store_name : {
             type : String,
             trim :true
         },
-        movie_name : {
+        grocery_name : {
             type : String,
             trim :true
         },
-        movie_releasing_date : {
+        grocery_quantity : {
             type : Number,
             default : 0
         },
-        movie_cast_name : {
-            type : String,
-            trim :true
-        },
-        movie_rating : {
+        grocery_price : {
             type : Number,
             default : 0
-        },
-        movie_comment : {
-            type : String,
-            trim :true
         },
         is_active: {
             type: Boolean,
@@ -37,5 +29,5 @@ const movieSchema = new mongoose.Schema(
       }
 );
 
-const Movie = mongoose.model("movie", movieSchema);
-module.exports = Movie;
+const Grocery = mongoose.model("grocery", grocerySchema);
+module.exports = Grocery;

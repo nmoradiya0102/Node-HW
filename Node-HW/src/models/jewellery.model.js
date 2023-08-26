@@ -1,30 +1,26 @@
 const mongoose = require("mongoose");
 
-const movieSchema = new mongoose.Schema(
+const jewellerySchema = new mongoose.Schema(
     {
-        movie_theatre_name : {
+        jewellery_shop_name : {
             type : String,
             trim :true
         },
-        movie_name : {
+        jewellery_type : {
             type : String,
             trim :true
         },
-        movie_releasing_date : {
+        jewellery_name : {
+            type : String,
+            trim :true
+        },
+        jewellery_design : {
+            type : String,
+            trim :true
+        },
+        jewellery_price : {
             type : Number,
-            default : 0
-        },
-        movie_cast_name : {
-            type : String,
-            trim :true
-        },
-        movie_rating : {
-            type : Number,
-            default : 0
-        },
-        movie_comment : {
-            type : String,
-            trim :true
+            default :  0
         },
         is_active: {
             type: Boolean,
@@ -37,5 +33,5 @@ const movieSchema = new mongoose.Schema(
       }
 );
 
-const Movie = mongoose.model("movie", movieSchema);
-module.exports = Movie;
+const Jewellery = mongoose.model("jewellery", jewellerySchema);
+module.exports = Jewellery;

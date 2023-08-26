@@ -24,8 +24,8 @@ const getHotelList = async (req, res) => {
 
     if (search) {
       filter.$or = [
-        { first_name: { $regex: search, $options: "i" } },
-        { last_name: { $regex: search, $options: "i" } },
+        { hotel_name : { $regex: search, $options: "i" } },
+        { hotel_address : { $regex: search, $options: "i" } },
       ];
     }
     const getList = await hotelService.getHotelList(filter, options);

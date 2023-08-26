@@ -30,7 +30,7 @@ const getCategoryById = async (categoryId) => {
 
 const getCategoryByName = async(categoryName) => {
   return Category.findOne({ categoryName });
-}
+};
 
 const updateDetails = async (categoryId, updateBody) => {
   return Category.findByIdAndUpdate(categoryId, { $set: updateBody });

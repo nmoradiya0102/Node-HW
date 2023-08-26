@@ -1,18 +1,17 @@
 const Joi = require("joi");
 
-/** create stationery */
-const createStationery = {
+/** create music */
+const createMusic = {
   body: Joi.object().keys({
-    stationery_name: Joi.string().required().trim(),
-    stationery_address: Joi.string().required().trim(),
-    stationery_order_quantity : Joi.string().required().trim(),
-    stationery_items_name: Joi.string().required().trim(),
-    stationery_items_price:Joi.number().integer().required(),
+    music_name: Joi.string().required().trim(),
+    music_artist: Joi.string().required().trim(),
+    music_album: Joi.string().required().trim(),
+    music_rating : Joi.number().integer().required(),
   }),
 };
 
-/** GEt stationery list */
-const getStationeryList = {
+/** GEt music list */
+const getMusicList = {
   query: Joi.object().keys({
     search: Joi.string().trim().allow(""),
     sortBy: Joi.string().trim().allow(""),
@@ -21,10 +20,10 @@ const getStationeryList = {
   }),
 };
 
-/** Get stationery details by id */
+/** Get music details by id */
 const getDetails = {
   params: Joi.object().keys({
-    stationeryId: Joi.string().required().trim(),
+    musicId: Joi.string().required().trim(),
   }),
 };
 
@@ -39,8 +38,8 @@ const sendMail = {
 };
 
 module.exports = {
-  createStationery,
-  getStationeryList,
+  createMusic,
+  getMusicList,
   getDetails,
   sendMail,
 };

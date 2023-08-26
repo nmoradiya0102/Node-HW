@@ -1,24 +1,20 @@
 const mongoose = require("mongoose");
 
-const stationerySchema = new mongoose.Schema(
+const musicSchema = new mongoose.Schema(
     {
-        stationery_name : {
+        music_name : {
             type : String,
             trim : true
         },
-        stationery_address : {
+        music_artist : {
             type : String,
             trim : true
         },
-        stationery_order_quantity :{
+        music_album : {
             type : String,
             trim : true
         },
-        stationery_items_name : {
-            type : String,
-            trim : true
-        },
-        stationery_items_price : {
+        music_rating : {
             type : Number,
             default : 0
         },
@@ -33,5 +29,5 @@ const stationerySchema = new mongoose.Schema(
       }
 );
 
-const Stationery = mongoose.model("stationery", stationerySchema);
-module.exports = Stationery;
+const Music = mongoose.model("music", musicSchema);
+module.exports = Music;

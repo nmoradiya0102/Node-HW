@@ -25,8 +25,8 @@ const getStationeryList = async (req, res) => {
 
     if (search) {
       filter.$or = [
-        { first_name: { $regex: search, $options: "i" } },
-        { last_name: { $regex: search, $options: "i" } },
+        { stationery_name: { $regex: search, $options: "i" } },
+        { stationery_address: { $regex: search, $options: "i" } },
       ];
     }
 

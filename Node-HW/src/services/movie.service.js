@@ -44,7 +44,7 @@ const getMovieById = async (movieId) => {
  * @returns {Promise<Movie>}
  */
 const deleteMovie = async (movieId) => {
-  return movie.findByIdAndDelete(movieId);
+  return Movie.findByIdAndDelete(movieId);
 };
 
 

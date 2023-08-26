@@ -1,5 +1,3 @@
-// const { options } = require("joi");
-// const Category = require("../models");
 const { categoryService } = require("../services");
 
 

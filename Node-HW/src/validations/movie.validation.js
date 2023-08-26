@@ -5,14 +5,14 @@ const createMovie = {
   body: Joi.object().keys({
     movie_theatre_name : Joi.string().required().trim(),
     movie_name: Joi.string().required().trim(),
-    movie_releasing_date : Joi.string().required().trim(),
+    movie_releasing_date : Joi.number().integer().required(),
     movie_cast_name: Joi.string().required().trim(),
-    movie_rating: Joi.string().required().trim(),
+    movie_rating: Joi.number().integer().required(),
     movie_comment: Joi.string().required().trim(),
   }),
 };
 
-/** GEt movie list */
+/** GEt movie list */ 
 const getMovieList = {
   query: Joi.object().keys({
     search: Joi.string().trim().allow(""),

@@ -1,18 +1,17 @@
 const Joi = require("joi");
 
-/** create stationery */
-const createStationery = {
+/** create grocery */
+const createGrocery = {
   body: Joi.object().keys({
-    stationery_name: Joi.string().required().trim(),
-    stationery_address: Joi.string().required().trim(),
-    stationery_order_quantity : Joi.string().required().trim(),
-    stationery_items_name: Joi.string().required().trim(),
-    stationery_items_price:Joi.number().integer().required(),
+    grocery_store_name: Joi.string().required().trim(),
+    grocery_name: Joi.string().required().trim(),
+    grocery_quantity: Joi.number().integer().required(),
+    grocery_price: Joi.number().integer().required(),
   }),
 };
 
-/** GEt stationery list */
-const getStationeryList = {
+/** Get grocery list */
+const getGroceryList = {
   query: Joi.object().keys({
     search: Joi.string().trim().allow(""),
     sortBy: Joi.string().trim().allow(""),
@@ -21,13 +20,12 @@ const getStationeryList = {
   }),
 };
 
-/** Get stationery details by id */
+/** Get grocery details by id */
 const getDetails = {
   params: Joi.object().keys({
-    stationeryId: Joi.string().required().trim(),
+    groceryId: Joi.string().required().trim(),
   }),
 };
-
 
 /** Send mail */
 const sendMail = {
@@ -39,8 +37,8 @@ const sendMail = {
 };
 
 module.exports = {
-  createStationery,
-  getStationeryList,
+  createGrocery,
+  getGroceryList,
   getDetails,
   sendMail,
 };

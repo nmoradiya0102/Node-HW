@@ -25,8 +25,8 @@ const getBusList = async (req, res) => {
 
       if (search) {
         filter.$or = [
-          { first_name: { $regex: search, $options: "i" } },
-          { last_name: { $regex: search, $options: "i" } },
+          { bus_name : { $regex: search, $options: "i" } },
+          { bus_route : { $regex: search, $options: "i" } },
         ];
       }
 

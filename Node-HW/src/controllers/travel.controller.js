@@ -25,8 +25,8 @@ const getTravelList = async (req, res) => {
 
     if (search) {
       filter.$or = [
-        { first_name: { $regex: search, $options: "i" } },
-        { last_name: { $regex: search, $options: "i" } },
+        { travel_name: { $regex: search, $options: "i" } },
+        { travel_destination: { $regex: search, $options: "i" } },
       ];
     }
 

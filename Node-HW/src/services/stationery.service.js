@@ -16,9 +16,9 @@ const createStationery = async (reqBody) => {
  * @returns {Promise<Stationery>}
  */
 const getStationeryList = async (filter, options) => {
-  const skip = (Number(options.page || 1) - 1) * Number(options.limit || 10);
+  // const skip = (Number(options.page || 1) - 1) * Number(options.limit || 10);
 
-  return Stationery.find(filter).skip(skip).limit(options.limit).select("-password");
+  return Stationery.find();
 };
 
 /**
