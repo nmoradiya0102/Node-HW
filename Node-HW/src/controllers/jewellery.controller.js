@@ -79,10 +79,30 @@ const deleteJewellery = async (req, res) => {
   }
 };
 
+//  update Jewellery
+const updateJewellery = async (req , res) =>{
+  try{
+    const jewelleryId = req.params.jewelleryId;
+    const jewelleryExists = await jewelleryService.getJewelleryById(jewelleryId);
+    if(!jewelleryExists){
+      throw new Error ("Jewellery not found..!");
+    }
+    await jewelleryService.updateJewellery(jewelleryId);
+
+    res.status(200).json({
+      success: true,
+      message: "Jewellery update successfully!",
+    });
+  } catch (error) {
+    res.status(400).json({ success: false, message: error.message });
+  }
+};
+
 
 module.exports = {
   createJewellery,
   getJewelleryList,
   getJewelleryDetails,
   deleteJewellery,
+  updateJewellery,
 };

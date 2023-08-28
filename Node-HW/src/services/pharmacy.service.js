@@ -47,7 +47,10 @@ const deletePharmacy = async (pharmacyId) => {
   return Pharmacy.findByIdAndDelete(pharmacyId);
 };
 
-
+// update pharmacy
+const updatePharmacy = async ( pharmacyId , updateBody) => {
+  return Pharmacy.findByIdAndUpdate(pharmacyId , {$set : updateBody});
+}
 
 module.exports = {
   createPharmacy,
@@ -55,4 +58,5 @@ module.exports = {
   getPharmacyByEmail,
   getPharmacyById,
   deletePharmacy,
+  updatePharmacy,
 };

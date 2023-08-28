@@ -48,6 +48,10 @@ const deleteJewellery = async (jewelleryId) => {
   return Jewellery.findByIdAndDelete(jewelleryId);
 };
 
+// update Jewellery detail
+const updateJewellery = async (jewelleryId , updateBody) => {
+  return Jewellery.findByIdAndUpdate(jewelleryId ,{$set :updateBody});
+}
 
 module.exports = {
   createJewellery,
@@ -55,4 +59,5 @@ module.exports = {
   getJewelleryByEmail,
   getJewelleryById,
   deleteJewellery,
+  updateJewellery,
 };

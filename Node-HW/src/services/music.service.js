@@ -47,7 +47,11 @@ const deleteMusic = async (musicId) => {
   return Music.findByIdAndDelete(musicId);
 };
 
+// update music
 
+const updateMusic = async( musicId , updateBody) => {
+  return Music.findByIdAndUpdate(musicId , {$set : updateBody});
+}
 
 module.exports = {
   createMusic,
@@ -55,4 +59,5 @@ module.exports = {
   getMusicByEmail,
   getMusicById,
   deleteMusic,
+  updateMusic,
 };

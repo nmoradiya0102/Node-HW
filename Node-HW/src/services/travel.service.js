@@ -47,6 +47,10 @@ const deleteTravel = async (travelId) => {
   return Travel.findByIdAndDelete(travelId);
 };
 
+// update Travel
+const updateTravel = async (travelId , updateBody) => {
+  return Travel.findByIdAndUpdate(travelId , {$set : updateBody});
+}
 
 
 module.exports = {
@@ -55,4 +59,5 @@ module.exports = {
   getTravelByEmail,
   getTravelById,
   deleteTravel,
+  updateTravel,
 };

@@ -81,10 +81,30 @@ const updateCategory = async (req, res) => {
     });
   }
 };
+/** Get Category details by id */
+const getCategoryDetails = async (req, res) => {
+  try {
+    const getDetails = await categoryService.getCategoryById(
+      req.params.categoryId
+    );
+    if (!getDetails) {
+      throw new Error("Category not found!");
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Category details get successfully!",
+      data: getDetails,
+    });
+  } catch (error) {
+    res.status(400).json({ success: false, message: error.message });
+  }
+};
 
 module.exports = {
     createCategory,
     categoryList,
     deleteRecord,
     updateCategory,
+    getCategoryDetails,
 }

@@ -80,10 +80,30 @@ const deleteMusic = async (req, res) => {
   }
 };
 
+//  update music
+const updateMusic = async (req , res) =>{
+  try{
+    const musicId = req.params.musicId;
+    const musicExists = await musicService.getMovieById(musicId);
+    if(!musicExists){
+      throw new Error ("Music not found..!");
+    }
+    await musicService.updateMusic(musicId);
+
+    res.status(200).json({
+      success: true,
+      message: "Music update successfully..!",
+    });
+  } catch (error) {
+    res.status(400).json({ success: false, message: error.message });
+  }
+};
+
 
 module.exports = {
   createMusic,
   getMusicList,
   getMusicDetails,
   deleteMusic,
+  updateMusic,
 };

@@ -47,7 +47,10 @@ const deleteStationery = async (stationeryId) => {
   return Stationery.findByIdAndDelete(stationeryId);
 };
 
-
+// update Statinery
+const updateStationery = async(stationeryId , updateBody) => {
+  return Stationery.findByIdAndUpdate(stationeryId , {$set : updateBody});
+}
 
 module.exports = {
   createStationery,
@@ -55,4 +58,5 @@ module.exports = {
   getStationeryByEmail,
   getStationeryById,
   deleteStationery,
+  updateStationery,
 };

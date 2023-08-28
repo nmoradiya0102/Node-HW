@@ -16,12 +16,12 @@ const schoolSchema = new mongoose.Schema(
             trim :true
         },
         school_student_age : {
-            type : String,
-            trim :true
+            type : Number,
+            default : 0
         },
         school_rank :{
-            type : String,
-            trim : true
+            type : Number,
+            default : 0
         },
         is_active: {
             type: Boolean,

@@ -1,4 +1,4 @@
-const { Movie, movie } = require("../models");
+const { Movie } = require("../models");
 /**
  * Create movie
  * @param {object} reqBody
@@ -46,6 +46,11 @@ const deleteMovie = async (movieId) => {
   return Movie.findByIdAndDelete(movieId);
 };
 
+// update movie
+
+const updateMovie = async (movieId , updateBody) =>{
+  return Movie.findByIdAndUpdate(movieId , { $set : updateBody});
+}
 
 
 module.exports = {
@@ -54,4 +59,5 @@ module.exports = {
   getMovieByEmail,
   getMovieById,
   deleteMovie,
+  updateMovie,
 };

@@ -79,6 +79,24 @@ const deletePharmacy = async (req, res) => {
   }
 };
 
+//  update pharmacy
+const updatePharmacy = async (req , res) =>{
+  try{
+    const pharmacyId = req.params.pharmacyId;
+    const pharmacyExists = await pharmacyService.getPharmacyById(pharmacyId);
+    if(!pharmacyExists){
+      throw new Error ("pharmacy not found..!");
+    }
+    await pharmacyService.updatePharmacy(pharmacyId);
+
+    res.status(200).json({
+      success: true,
+      message: "pharmacy update successfully..!",
+    });
+  } catch (error) {
+    res.status(400).json({ success: false, message: error.message });
+  }
+};
 
 
 module.exports = {
@@ -86,4 +104,5 @@ module.exports = {
   getPharmacyList,
   getPharmacyDetails,
   deletePharmacy,
+  updatePharmacy,
 };

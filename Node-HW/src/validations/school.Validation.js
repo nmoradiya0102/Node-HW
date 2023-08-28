@@ -6,8 +6,8 @@ const createSchool = {
     school_name: Joi.string().required().trim(),
     school_address: Joi.string().required().trim(),
     school_student_name: Joi.string().required().trim(),
-    school_student_age: Joi.string().required().trim(),
-    school_rank : Joi.string().required().trim(),
+    school_student_age: Joi.number().integer().required(),
+    school_rank : Joi.number().integer().required(),
   }),
 };
 

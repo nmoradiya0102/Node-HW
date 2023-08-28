@@ -47,7 +47,10 @@ const deleteSchool = async (schoolId) => {
   return School.findByIdAndDelete(schoolId);
 };
 
-
+// update School
+const updateSchool = async(schoolId , updateBody) =>{
+  return School.findByIdAndUpdate(schoolId , {$set : updateBody});
+}
 
 module.exports = {
   createSchool,
@@ -55,4 +58,5 @@ module.exports = {
   getSchoolByEmail,
   getSchoolById,
   deleteSchool,
+  updateSchool,
 };

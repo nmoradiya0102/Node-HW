@@ -47,10 +47,17 @@ const deleteGrocery = async (groceryId) => {
   return Grocery.findByIdAndDelete(groceryId);
 };
 
+
+//  update grocery detail
+const updateGrocery = async (groceryId , updateBody) =>{
+  return Grocery.findByIdAndUpdate(groceryId , {$set : updateBody});
+}
+
 module.exports = {
   createGrocery,
   getGroceryList,
   getGroceryByEmail,
   getGroceryById,
   deleteGrocery,
+  updateGrocery,
 };

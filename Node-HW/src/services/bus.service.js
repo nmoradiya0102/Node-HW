@@ -47,6 +47,10 @@ const deleteBus = async (busId) => {
   return Bus.findByIdAndDelete(busId);
 };
 
+// update bus detail
+const updateDetails = async(busId , updateBody) => {
+  return Bus.findByIdAndUpdate(busId , { $set : updateBody});
+}
 
 module.exports = {
   createBus,
@@ -54,4 +58,5 @@ module.exports = {
   getBusByEmail,
   getBusById,
   deleteBus,
+  updateDetails
 };

@@ -47,6 +47,11 @@ const deleteHotel = async (hotelId) => {
   return Hotel.findByIdAndDelete(hotelId);
 };
 
+// update hotel detail
+const updateHotel = async (hotelId , updateBody) => {
+  return Hotel.findByIdAndUpdate(hotelId , {$set : updateBody});
+}
+
 
 module.exports = {
   createHotel,
@@ -54,4 +59,5 @@ module.exports = {
   getHotelByEmail,
   getHotelById,
   deleteHotel,
+  updateHotel,
 };
