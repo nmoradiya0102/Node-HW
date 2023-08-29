@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get(
     "/list",
-    ecommerceController.get_all_list
+    ecommerceController.getalllist
 )
 
 module.exports = router;

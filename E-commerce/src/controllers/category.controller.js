@@ -1,20 +1,20 @@
-const { category_Service } = require("../services");
+const { categoryService } = require("../services");
 
-/* CREATE CATEGORY */
-const create_category = async (req, res) => {
+/* create category */
+const createcategory = async (req, res) => {
     try {
       const reqBody = req.body;
-      const category_exist = await category_Service.get_category_by_name(reqBody.category_name);
-      if(category_exist){
-        throw new Error("Category by this name already exist -!- ");
+      const categoryexist = await categoryService.getcategorybyname(reqBody.categoryname);
+      if(categoryexist){
+        throw new Error("Category by this name already exist");
       }
-      const category = await category_Service.create_category(reqBody);
+      const category = await categoryService.createcategory(reqBody);
       if(!category){
-        throw new Error("Something went wrong -!- ");
+        throw new Error("Something went wrong");
       }
       res.status(200).json({
         success: true,
-        message: "Category create successfully ^-^ ",
+        message: "Category create successfully",
         data: reqBody,
       });
     } catch (error) {
@@ -25,16 +25,16 @@ const create_category = async (req, res) => {
     }
 };
 
-/* CATEGORY LIST */
-const category_list = async (req,res) => {
+/* category list */
+const categorylist = async (req,res) => {
     try {
-        const categorylist = await category_Service.get_category_list();
+        const categorylist = await categoryService.getcategorylist();
         if(!categorylist){
-          throw new Error("Category list data not found -!- ");
+          throw new Error("Category list data not found");
         }
         res.status(200).json({
           success: true,
-          message: "Category list dispatch successfully ^-^ ",
+          message: "Category list dispatch successfully",
           data:categorylist
         });
     } catch (error) {
@@ -45,18 +45,18 @@ const category_list = async (req,res) => {
     }
 }
 
-/* DELETE CATEGORY */
-const delete_category = async(req,res) => {
+/* category delete */
+const deletecategory = async(req,res) => {
   try {
-    const category_id = req.params.categoryId;
-    const category_exist = await category_Service.get_category_by_id(category_id);
-    if(!category_exist){
-      throw new Error("Category not found -!- ");
+    const categoryid = req.params.categoryId;
+    const categoryexist = await categoryService.getcategorybyid(categoryid);
+    if(!categoryexist){
+      throw new Error("Category not found ");
     }
-    await category_Service.delete_category(category_id);
+    await categoryService.deletecategory(categoryid);
     res.status(200).json({
       success: true,
-      message: "Category deleted successfully ^-^ ",
+      message: "Category deleted successfully",
     });
   } catch (error) {
     res.status(400).json({
@@ -66,7 +66,7 @@ const delete_category = async(req,res) => {
   }
 }
 module.exports = {
-    create_category,
-    category_list,
-    delete_category
+    createcategory,
+    categorylist,
+    deletecategory
 }

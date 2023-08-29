@@ -6,16 +6,16 @@ const validate = require("../middlewares/validate")
 const router = express.Router()
 router.get(
     "/list",
-    categoryController.category_list
+    categoryController.categorylist
 )
 router.post(
     "/create-category",
     validate(categoryValidation.createCategory),
-    categoryController.create_category
+    categoryController.createcategory
 )
 router.delete(
     "/delete-category/:categoryId",
-    categoryController.delete_category
+    categoryController.deletecategory
 )
 
 module.exports = router;

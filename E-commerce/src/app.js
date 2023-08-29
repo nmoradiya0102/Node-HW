@@ -6,7 +6,7 @@ const router = require('./routes');
 // const mongoose = require('mongoose');
 require('./helpers/crons');
 const config = require('./config/config.js');
-const eCommerceRoutes = require('./routes/eCommerce.route');
+// const eCommerceRoutes = require('./routes/eCommerce.route');
 
 const app = express();
 
@@ -22,7 +22,7 @@ const app = express();
 app.use(bodyParser.json());
 
 // Routes
-app.use('/v1', eCommerceRoutes);
+app.use('/v1', router);
 
 /** whenever route not created and you try to use that route then throw error. */
 app.use((req, res, next) => {

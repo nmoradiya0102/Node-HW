@@ -5,7 +5,7 @@ const { Category } = require("../models");
  * @param {object} reqbody
  * @returns {Promise<Category>}
  */
-const create_category = async (reqbody) => {
+const createcategory = async (reqbody) => {
   return Category.create(reqbody);
 };
 
@@ -13,7 +13,7 @@ const create_category = async (reqbody) => {
  * Get category list
  * @returns {Promise<Category>}
  */
-const get_category_list = async () => {
+const getcategorylist = async () => {
     return Category.find();
 };
 
@@ -22,7 +22,7 @@ const get_category_list = async () => {
  * @param {object} category_name
  * @returns {Promise<Category>}
  */
-const get_category_by_name = async(category_name)=>{
+const getcategorybyname = async(category_name)=>{
   return Category.findOne({category_name})
 }
 
@@ -31,7 +31,7 @@ const get_category_by_name = async(category_name)=>{
  * @param {object} category_id
  * @returns {Promise<Category>}
  */
-const get_category_by_id = async(category_id) => {
+const getcategorybyid = async(category_id) => {
   return Category.findById(category_id);
 }
 
@@ -40,14 +40,14 @@ const get_category_by_id = async(category_id) => {
 * @param {object} category_id
 * @returns {Promise<Category>}
 */
-const delete_category = async(category_id) => {
+const deletecategory = async(category_id) => {
   return Category.findByIdAndDelete((category_id));
 }
 
 module.exports = {
-    create_category,
-    get_category_list,
-    get_category_by_name,
-    get_category_by_id,
-    delete_category
+    createcategory,
+    getcategorylist,
+    getcategorybyname,
+    getcategorybyid,
+    deletecategory
 }

@@ -1,6 +1,6 @@
 const Joi = require("joi");
 
-const create_product = {
+const createproduct = {
     body: Joi.object().keys({
         product_name: Joi.string().required().trim(),
         product_desc: Joi.string().required().trim(),
@@ -9,5 +9,5 @@ const create_product = {
 }
 
 module.exports = {
-    create_product
+    createproduct
 }

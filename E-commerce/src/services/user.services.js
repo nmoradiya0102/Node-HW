@@ -5,7 +5,7 @@ const { User } = require("../models");
  * @param {object} reqBody
  * @returns {Promise<User>}
  */
-const create_user = async (reqBody) => {
+const createuser = async (reqBody) => {
   return User.create(reqBody);
 };
 
@@ -15,7 +15,7 @@ const create_user = async (reqBody) => {
  * @param {object} options
  * @returns {Promise<User>}
  */
-const get_user_list = async () => {
+const getuserlist = async () => {
   return User.find();
 };
 
@@ -24,7 +24,7 @@ const get_user_list = async () => {
  * @param {string} email
  * @returns {Promise<User>}
  */
-const get_user_by_email = async (email) => {
+const getuserbyemail = async (email) => {
   return User.findOne({ email });
 };
 
@@ -33,7 +33,7 @@ const get_user_by_email = async (email) => {
  * @param {ObjectId} user_id
  * @returns {Promise<User>}
  */
-const get_user_by_id = async (user_id) => {
+const getuserbyid = async (user_id) => {
   return User.findById(user_id);
 };
 
@@ -43,7 +43,7 @@ const get_user_by_id = async (user_id) => {
  * @param {object} updateBody
  * @returns {Promise<User>}
  */
-const update_details = async (userId, updateBody) => {
+const updatedetails = async (userId, updateBody) => {
   return User.findByIdAndUpdate(userId, { $set: updateBody });
 };
 
@@ -52,15 +52,15 @@ const update_details = async (userId, updateBody) => {
  * @param {ObjectId} userId
  * @returns {Promise<User>}
  */
-const delete_user = async (userId) => {
+const deleteuser = async (userId) => {
   return User.findByIdAndDelete(userId);
 };
 
 module.exports = {
-  create_user,
-  get_user_list,
-  get_user_by_id,
-  update_details,
-  get_user_by_email,
-  delete_user,
+  createuser,
+  getuserlist,
+  getuserbyid,
+  updatedetails,
+  getuserbyemail,
+  deleteuser,
 };

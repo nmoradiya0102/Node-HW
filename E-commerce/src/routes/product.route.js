@@ -6,15 +6,15 @@ const router = express.Router();
 
 router.post(
     "/create-product",
-    validate(productValidation.create_product),
-    productController.create_product
+    validate(productValidation.createproduct),
+    productController.createproduct
 )
 router.get(
     "/list",
-    productController.get_product_list
+    productController.getproductlist
 )
 router.delete(
     "/delete-product/:productId",
-    productController.delete_product
+    productController.deleteproduct
 )
 module.exports = router

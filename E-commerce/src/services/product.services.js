@@ -5,7 +5,7 @@ const { Product } = require("../models");
  * @param {string} product_name
  * @returns {Promise<Product>}
  */
-const get_product_by_name = async(product_name) => {
+const getproductbyname = async(product_name) => {
     return Product.findOne({product_name});
 }
 
@@ -14,7 +14,7 @@ const get_product_by_name = async(product_name) => {
  * @param {object} reqBody
  * @returns {Promise<Product>}
  */
-const create_product = async(reqBody) => {
+const createproduct = async(reqBody) => {
     return Product.create(reqBody);
 };
 
@@ -22,7 +22,7 @@ const create_product = async(reqBody) => {
  * Get Product list
  * @returns {Promise<Product>}
  */
-const get_product_list = async() => {
+const getproductlist = async() => {
     return Product.find();
 }
 
@@ -31,7 +31,7 @@ const get_product_list = async() => {
  * @param {object} product_id
  * @returns {Promise<Product>}
  */
-const get_product_by_id = async(product_id) => {
+const getproductbyid = async(product_id) => {
     return Product.findById(product_id);
 }
 
@@ -40,14 +40,14 @@ const get_product_by_id = async(product_id) => {
  * @param {object} product_id
  * @returns {Promise<Product>}
  */
-const delete_product = async(product_id) => {
+const deleteproduct = async(product_id) => {
     return Product.findByIdAndDelete(product_id);
 }
 
 module.exports = {
-    create_product,
-    get_product_by_name,
-    get_product_list,
-    get_product_by_id,
-    delete_product
+    createproduct,
+    getproductbyname,
+    getproductlist,
+    getproductbyid,
+    deleteproduct
 }

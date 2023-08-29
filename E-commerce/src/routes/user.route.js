@@ -7,18 +7,18 @@ const router = express.Router();
 /** create user */
 router.post(
     "/create-user",
-    validate(userValidation.create_user),
-    userController.create_user
+    validate(userValidation.createuser),
+    userController.createuser
 );
 /** Get user list */
 router.get(
     "/list",
-    validate(userValidation.get_user_list),
-    userController.get_user_list
+    validate(userValidation.getuserlist),
+    userController.getuserlist
 );
 router.delete(
     "/delete-user/:userId",
-    userController.delete_user
+    userController.deleteuser
 )
 
 module.exports = router;
