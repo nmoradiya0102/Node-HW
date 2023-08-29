@@ -24,11 +24,10 @@ router.delete(
     categoryController.deleteRecord
   )
 
-
 /** update category */
 router.put(
   "/update-category/:categoryId",
   categoryController.updateCategory
-)
+);
 
 module.exports = router;

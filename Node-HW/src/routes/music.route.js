@@ -19,18 +19,18 @@ router.get(
   musicController.getMusicList
 );
 
-/** Get music details by id */
-router.get(
-  "/get-details/:musicId",
-  validate(musicValidation.getDetails),
-  musicController.getMusicDetails
-);
-
 /** Delete music */
 router.delete(
   "/delete-music/:musicId",
   validate(musicValidation.getDetails),
   musicController.deleteMusic
+);
+
+/** update music */
+router.put(
+  "/update-music/:musicId",
+  validate(musicValidation.getDetails),
+  musicController.updateMusic
 );
 
 

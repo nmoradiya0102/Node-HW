@@ -19,11 +19,11 @@ router.get(
   movieController.getMovieList
 );
 
-/** Get movie details by id */
-router.get(
-  "/get-details/:movieId",
+/** update movie */
+router.put(
+  "/update-movie/:movieId",
   validate(movieValidation.getDetails),
-  movieController.getMovieDetails
+  movieController.updateMovie
 );
 
 /** Delete movie */

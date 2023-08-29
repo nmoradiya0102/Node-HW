@@ -19,13 +19,6 @@ router.get(
   userController.getUserList
 );
 
-/** Get user details by id */
-router.get(
-  "/get-details/:userId",
-  validate(userValidation.getDetails),
-  userController.getuserDetails
-);
-
 /** user details update by id */
 router.put(
   "/update-details/:userId",

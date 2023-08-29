@@ -21,26 +21,7 @@ const getBusList = {
   }),
 };
 
-/** Get bus details by id */
-const getDetails = {
-  params: Joi.object().keys({
-    busId: Joi.string().required().trim(),
-  }),
-};
-
-
-/** Send mail */
-const sendMail = {
-  body: Joi.object({
-    email: Joi.string().required().trim().email(),
-    subject: Joi.string().required().trim(),
-    text: Joi.string().required().trim(),
-  }),
-};
-
 module.exports = {
   createBus,
   getBusList,
-  getDetails,
-  sendMail,
 };

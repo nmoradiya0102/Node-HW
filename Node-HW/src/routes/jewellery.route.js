@@ -19,13 +19,6 @@ router.get(
   jewelleryController.getJewelleryList
 );
 
-/** Get jewellery details by id */
-router.get(
-  "/get-details/:jewelleryId",
-  validate(jewelleryValidation.getDetails),
-  jewelleryController.getJewelleryDetails
-);
-
 /** Delete jewellery */
 router.delete(
   "/delete-jewellery/:jewelleryId",
@@ -33,5 +26,11 @@ router.delete(
   jewelleryController.deleteJewellery
 );
 
+/** update Jewellery */
+router.put(
+  "/update-jewellery/:jewelleryId",
+  validate(jewelleryValidation.getDetails),
+  jewelleryController.updateJewellery
+);
 
 module.exports = router;

@@ -19,18 +19,18 @@ router.get(
   groceryController.getGroceryList
 );
 
-/** Get grocery details by id */
-router.get(
-  "/get-details/:groceryId",
-  validate(groceryValidation.getDetails),
-  groceryController.getGroceryDetails
-);
-
 /** Delete grocery */
 router.delete(
   "/delete-grocery/:groceryId",
   validate(groceryValidation.getDetails),
   groceryController.deleteGrocery
+);
+
+/** update grocery */
+router.put(
+  "/update-grocery/:groceryId",
+  validate(groceryValidation.getDetails),
+  groceryController.updateGrocery
 );
 
 module.exports = router;

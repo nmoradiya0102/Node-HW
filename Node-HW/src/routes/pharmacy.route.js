@@ -19,18 +19,18 @@ router.get(
   pharmacyController.getPharmacyList
 );
 
-/** Get pharmacy details by id */
-router.get(
-  "/get-details/:pharmacyId",
-  validate(pharmacyValidation.getDetails),
-  pharmacyController.getPharmacyDetails
-);
-
 /** Delete pharmacy */
 router.delete(
   "/delete-pharmacy/:pharmacyId",
   validate(pharmacyValidation.getDetails),
   pharmacyController.deletePharmacy
+);
+
+/** update pharmacy */
+router.put(
+  "/update-pharmacy/:pharmacyId",
+  validate(pharmacyValidation.getDetails),
+  pharmacyController.updatePharmacy
 );
 
 

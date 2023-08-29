@@ -19,18 +19,19 @@ router.get(
   schoolController.getSchoolList
 );
 
-/** Get school details by id */
-router.get(
-  "/get-details/:schoolId",
-  validate(schoolValidation.getDetails),
-  schoolController.getSchoolDetails
-);
-
 /** Delete school */
 router.delete(
   "/delete-school/:schoolId",
   validate(schoolValidation.getDetails),
   schoolController.deleteSchool
 );
+
+/** update school */
+router.put(
+  "/update-school/:schoolId",
+  validate(schoolValidation.getDetails),
+  schoolController.updateSchool
+);
+
 
 module.exports = router;

@@ -19,18 +19,18 @@ router.get(
   hotelController.getHotelList
 );
 
-/** Get hotel details by id */
-router.get(
-  "/get-details/:hotelId",
-  validate(hotelValidation.getDetails),
-  hotelController.getHotelDetails
-);
-
 /** Delete hotel */
 router.delete(
   "/delete-hotel/:hotelId",
   validate(hotelValidation.getDetails),
   hotelController.deleteHotel
+);
+
+/** update hotel */
+router.put(
+  "/update-hotel/:hotelId",
+  validate(hotelValidation.getDetails),
+  hotelController.updateHotel
 );
 
 

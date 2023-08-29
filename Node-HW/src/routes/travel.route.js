@@ -19,18 +19,20 @@ router.get(
   travelController.getTravelList
 );
 
-/** Get travel details by id */
-router.get(
-  "/get-details/:travelId",
-  validate(travelValidation.getDetails),
-  travelController.getTravelDetails
-);
-
 /** Delete travel */
 router.delete(
   "/delete-travel/:travelId",
   validate(travelValidation.getDetails),
   travelController.deleteTravel
 );
+
+
+/** update travel */
+router.put(
+  "/update-travel/:travelId",
+  validate(travelValidation.getDetails),
+  travelController.updateTravel
+);
+
 
 module.exports = router;

@@ -19,18 +19,19 @@ router.get(
   stationeryController.getStationeryList
 );
 
-/** Get stationery details by id */
-router.get(
-  "/get-details/:stationeryId",
-  validate(stationeryValidation.getDetails),
-  stationeryController.getStationeryDetails
-);
-
 /** Delete stationery */
 router.delete(
   "/delete-stationery/:stationeryId",
   validate(stationeryValidation.getDetails),
   stationeryController.deleteStationery
 );
+
+/** update stationey */
+router.put(
+  "/update-stationery/:stationeryId",
+  validate(stationeryValidation.getDetails),
+  stationeryController.updateStationery
+);
+
 
 module.exports = router;

@@ -19,18 +19,19 @@ router.get(
   busController.getBusList
 );
 
-/** Get bus details by id */
-router.get(
-  "/get-details/:busId",
-  validate(busValidation.getDetails),
-  busController.getBusDetails
-);
-
 /** Delete bus */
 router.delete(
   "/delete-bus/:busId",
   validate(busValidation.getDetails),
   busController.deleteBus
 );
+
+/** update bus */
+router.put(
+  "/update-bus/:busId",
+  validate(busValidation.getDetails),
+  busController.updateBus
+);
+
 
 module.exports = router;
