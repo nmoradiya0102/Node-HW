@@ -21,15 +21,6 @@ const getPharmacyList = async (filter, options) => {
 };
 
 /**
- * Get pharmacy by email
- * @param {string} email
- * @returns {Promise<Pharmacy>}
- */
-const getPharmacyByEmail = async (email) => {
-  return Pharmacy.findOne({ email });
-};
-
-/**
  * Get pharmacy details by id
  * @param {ObjectId} stationeryId
  * @returns {Promise<Pharmacy>}
@@ -55,7 +46,6 @@ const updatePharmacy = async ( pharmacyId , updateBody) => {
 module.exports = {
   createPharmacy,
   getPharmacyList,
-  getPharmacyByEmail,
   getPharmacyById,
   deletePharmacy,
   updatePharmacy,

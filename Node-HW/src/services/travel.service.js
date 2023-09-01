@@ -21,15 +21,6 @@ const getTravelList = async (filter, options) => {
 };
 
 /**
- * Get travel by email
- * @param {string} email
- * @returns {Promise<Travel>}
- */
-const getTravelByEmail = async (email) => {
-  return Travel.findOne({ email });
-};
-
-/**
  * Get travel details by id
  * @param {ObjectId} travelId
  * @returns {Promise<Travel>}
@@ -56,7 +47,6 @@ const updateTravel = async (travelId , updateBody) => {
 module.exports = {
   createTravel,
   getTravelList,
-  getTravelByEmail,
   getTravelById,
   deleteTravel,
   updateTravel,

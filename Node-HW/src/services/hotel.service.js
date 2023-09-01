@@ -21,15 +21,6 @@ const getHotelList = async (filter, options) => {
 };
 
 /**
- * Get hotel by email
- * @param {string} email
- * @returns {Promise<Hotel>}
- */
-const getHotelByEmail = async (email) => {
-  return Hotel.findOne({ email });
-};
-
-/**
  * Get hotel details by id
  * @param {ObjectId} hotelId
  * @returns {Promise<Hotel>}
@@ -56,7 +47,6 @@ const updateHotel = async (hotelId , updateBody) => {
 module.exports = {
   createHotel,
   getHotelList,
-  getHotelByEmail,
   getHotelById,
   deleteHotel,
   updateHotel,

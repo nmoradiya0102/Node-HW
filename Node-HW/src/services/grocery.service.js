@@ -21,15 +21,6 @@ const getGroceryList = async (filter, options) => {
 };
 
 /**
- * Get Grocery by email
- * @param {string} email
- * @returns {Promise<Grocery>}
- */
-const getGroceryByEmail = async (email) => {
-  return Grocery.findOne({ email });
-};
-
-/**
  * Get Grocery details by id
  * @param {ObjectId} groceryId
  * @returns {Promise<Grocery>}
@@ -56,7 +47,6 @@ const updateGrocery = async (groceryId , updateBody) =>{
 module.exports = {
   createGrocery,
   getGroceryList,
-  getGroceryByEmail,
   getGroceryById,
   deleteGrocery,
   updateGrocery,

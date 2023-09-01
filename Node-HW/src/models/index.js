@@ -13,3 +13,4 @@ module.exports.Pharmacy = require("./pharmacy.model");
 module.exports.Music = require("./music.model");
 module.exports.Jewellery = require("./jewellery.model");
 module.exports.Grocery = require("./grocery.model");
+module.exports.Student = require("./student.model");

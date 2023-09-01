@@ -21,15 +21,6 @@ const getStationeryList = async (filter, options) => {
 };
 
 /**
- * Get stationery by email
- * @param {string} email
- * @returns {Promise<Stationery>}
- */
-const getStationeryByEmail = async (email) => {
-  return Stationery.findOne({ email });
-};
-
-/**
  * Get stationery details by id
  * @param {ObjectId} stationeryId
  * @returns {Promise<Stationery>}
@@ -55,7 +46,6 @@ const updateStationery = async(stationeryId , updateBody) => {
 module.exports = {
   createStationery,
   getStationeryList,
-  getStationeryByEmail,
   getStationeryById,
   deleteStationery,
   updateStationery,

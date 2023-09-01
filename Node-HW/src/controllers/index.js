@@ -12,3 +12,4 @@ module.exports.pharmacyController = require("./pharmacy.controller");
 module.exports.musicController = require("./music.controller");
 module.exports.jewelleryController = require("./jewellery.controller");
 module.exports.groceryController = require("./grocery.controller");
+module.exports.studentController = require("./student.controller");

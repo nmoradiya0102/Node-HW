@@ -21,15 +21,6 @@ const getBusList = async (filter, options) => {
 };
 
 /**
- * Get bus by email
- * @param {string} email
- * @returns {Promise<Bus>}
- */
-const getBusByEmail = async (email) => {
-  return Bus.findOne({ email });
-};
-
-/**
  * Get bus details by id
  * @param {ObjectId} busId
  * @returns {Promise<Bus>}
@@ -55,7 +46,6 @@ const updateDetails = async(busId , updateBody) => {
 module.exports = {
   createBus,
   getBusList,
-  getBusByEmail,
   getBusById,
   deleteBus,
   updateDetails

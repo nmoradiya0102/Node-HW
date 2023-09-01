@@ -21,15 +21,6 @@ const getMusicList = async (filter, options) => {
 };
 
 /**
- * Get music by email
- * @param {string} email
- * @returns {Promise<Music>}
- */
-const getMusicByEmail = async (email) => {
-  return Music.findOne({ email });
-};
-
-/**
  * Get Music details by id
  * @param {ObjectId} musicId
  * @returns {Promise<Music>}
@@ -56,7 +47,6 @@ const updateMusic = async( musicId , updateBody) => {
 module.exports = {
   createMusic,
   getMusicList,
-  getMusicByEmail,
   getMusicById,
   deleteMusic,
   updateMusic,

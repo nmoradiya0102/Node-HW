@@ -21,15 +21,6 @@ const getSchoolList = async (filter, options) => {
 };
 
 /**
- * Get school by email
- * @param {string} email
- * @returns {Promise<School>}
- */
-const getSchoolByEmail = async (email) => {
-  return School.findOne({ email });
-};
-
-/**
  * Get school details by id
  * @param {ObjectId} schoolId
  * @returns {Promise<School>}
@@ -55,7 +46,6 @@ const updateSchool = async(schoolId , updateBody) =>{
 module.exports = {
   createSchool,
   getSchoolList,
-  getSchoolByEmail,
   getSchoolById,
   deleteSchool,
   updateSchool,

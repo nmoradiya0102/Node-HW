@@ -21,15 +21,6 @@ const getJewelleryList = async (filter, options) => {
 };
 
 /**
- * Get Jewellery by email
- * @param {string} email
- * @returns {Promise<Jewellery>}
- */
-const getJewelleryByEmail = async (email) => {
-  return Jewellery.findOne({ email });
-};
-
-/**
  * Get Jewellery details by id
  * @param {ObjectId} jewelleryId
  * @returns {Promise<Jewellery>}
@@ -56,7 +47,6 @@ const updateJewellery = async (jewelleryId , updateBody) => {
 module.exports = {
   createJewellery,
   getJewelleryList,
-  getJewelleryByEmail,
   getJewelleryById,
   deleteJewellery,
   updateJewellery,

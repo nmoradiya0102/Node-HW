@@ -20,15 +20,6 @@ const getMovieList = async (filter, options) => {
 };
 
 /**
- * Get movie by email
- * @param {string} email
- * @returns {Promise<Movie>}
- */
-const getMovieByEmail = async (email) => {
-  return Movie.findOne({ email });
-};
-
-/**
  * Get movie details by id
  * @param {ObjectId} movieId
  * @returns {Promise<Movie>}
@@ -56,7 +47,6 @@ const updateMovie = async (movieId , updateBody) =>{
 module.exports = {
   createMovie,
   getMovieList,
-  getMovieByEmail,
   getMovieById,
   deleteMovie,
   updateMovie,

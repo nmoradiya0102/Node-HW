@@ -28,6 +28,10 @@ const ProductSchema = new mongoose.Schema(
             trim: true,
             required: true,
         },
+        catrgory:{
+            type : mongoose.type.objectId,
+            ref : "category"
+        },
         is_active: {
             type: Boolean,
             default: true
@@ -38,5 +42,6 @@ const ProductSchema = new mongoose.Schema(
         versionKey: false
     },
 );
+
 const Product = mongoose.model("products", ProductSchema);
 module.exports = Product;
