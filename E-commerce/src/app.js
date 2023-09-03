@@ -3,20 +3,11 @@ const bodyParser = require('body-parser');
 const http = require('http');
 const { connectDB } = require('./db/dbconnection.js');
 const router = require('./routes');
-// const mongoose = require('mongoose');
 require('./helpers/crons');
 const config = require('./config/config.js');
 // const eCommerceRoutes = require('./routes/eCommerce.route');
 
 const app = express();
-
-// Connect to MongoDB
-// mongoose.connect('mongodb://localhost/eCommerceDB', {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-// });
-
-// app.use(bodyParser.urlencoded({ extended: false }));
 
 // Middleware
 app.use(bodyParser.json());
@@ -36,7 +27,7 @@ connectDB()
 const server = http.createServer(app);
 
 server.listen(config.port, () => {
-  console.log("Port number "+ config.port + " is active");
+  console.log("Port number "+ config.port + " is Start");
 });
 
 

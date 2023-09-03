@@ -1,45 +1,28 @@
 const { Product } = require("../models");
 
-/**
- * Get product by product_name
- * @param {string} product_name
- * @returns {Promise<Product>}
- */
+// Get product by product name
 const getproductbyname = async(product_name) => {
     return Product.findOne({product_name});
 }
 
-/**
- * Create product
- * @param {object} reqBody
- * @returns {Promise<Product>}
- */
+
+//  Create product
 const createproduct = async(reqBody) => {
     return Product.create(reqBody);
 };
 
-/**
- * Get Product list
- * @returns {Promise<Product>}
- */
+//  Get Product list
 const getproductlist = async() => {
     return Product.find();
 }
 
-/**
- * Get product by id
- * @param {object} product_id
- * @returns {Promise<Product>}
- */
+
+//  Get product by id
 const getproductbyid = async(product_id) => {
     return Product.findById(product_id);
 }
 
-/**
- * Delete product by id
- * @param {object} product_id
- * @returns {Promise<Product>}
- */
+//  Delete product by id
 const deleteproduct = async(product_id) => {
     return Product.findByIdAndDelete(product_id);
 }

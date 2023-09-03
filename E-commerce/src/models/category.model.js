@@ -13,13 +13,13 @@
 
 const mongoose = require("mongoose");
 
-const category_Schema = new mongoose.Schema(
+const categorySchema = new mongoose.Schema(
     {
         category_name: {
             type: String,
             trim: true
         },
-        category_desc: {
+        category_description: {
             type: String,
             trim: true
         },
@@ -34,5 +34,5 @@ const category_Schema = new mongoose.Schema(
     }
 );
 
-const category = mongoose.model("Category",category_Schema);
+const category = mongoose.model("Category",categorySchema);
 module.exports = category;

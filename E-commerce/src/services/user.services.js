@@ -1,48 +1,26 @@
 const { User } = require("../models");
 
-/**
- * Create user
- * @param {object} reqBody
- * @returns {Promise<User>}
- */
+//  create user
 const createuser = async (reqBody) => {
   return User.create(reqBody);
 };
 
-/**
- * Get user list
- * @param {object} filter
- * @param {object} options
- * @returns {Promise<User>}
- */
+// Get user list
 const getuserlist = async () => {
   return User.find();
 };
 
-/**
- * Get user by email
- * @param {string} email
- * @returns {Promise<User>}
- */
+// Get user by email
 const getuserbyemail = async (email) => {
   return User.findOne({ email });
 };
 
-/**
- * Get user details by id
- * @param {ObjectId} user_id
- * @returns {Promise<User>}
- */
+// Get user details by id
 const getuserbyid = async (user_id) => {
   return User.findById(user_id);
 };
 
-/**
- * user details update by id
- * @param {ObjectId} userId
- * @param {object} updateBody
- * @returns {Promise<User>}
- */
+//  user details update by id
 const updatedetails = async (userId, updateBody) => {
   return User.findByIdAndUpdate(userId, { $set: updateBody });
 };

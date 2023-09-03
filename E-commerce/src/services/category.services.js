@@ -1,45 +1,26 @@
 const { Category } = require("../models");
 
-/**
- * Create category
- * @param {object} reqbody
- * @returns {Promise<Category>}
- */
+// create category
 const createcategory = async (reqbody) => {
   return Category.create(reqbody);
 };
 
-/**
- * Get category list
- * @returns {Promise<Category>}
- */
-const getcategorylist = async () => {
-    return Category.find();
+// Get category list
+const getcategorylist = async (filter , options) => {
+    return Category.find({ $or :[{is_active : true}]});
 };
 
-/**
- * Get category by name
- * @param {object} category_name
- * @returns {Promise<Category>}
- */
+// Get category by name
 const getcategorybyname = async(category_name)=>{
   return Category.findOne({category_name})
 }
 
-/**
- * Get Category by id
- * @param {object} category_id
- * @returns {Promise<Category>}
- */
+// Get Category by id
 const getcategorybyid = async(category_id) => {
   return Category.findById(category_id);
 }
 
-/**
-* Delete Category by id
-* @param {object} category_id
-* @returns {Promise<Category>}
-*/
+// Delete Category by id
 const deletecategory = async(category_id) => {
   return Category.findByIdAndDelete((category_id));
 }
