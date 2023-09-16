@@ -25,12 +25,14 @@ router.post(
 /** Delete category */
 router.delete(
     "/delete/:categoryId",
+    auth(),
     categoryController.deleteRecord
   )
 
 /** update category */
 router.put(
   "/update-category/:categoryId",
+  auth(),
   categoryController.updateCategory
 );
 

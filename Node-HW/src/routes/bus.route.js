@@ -8,6 +8,7 @@ const router = express.Router();
 /** create bus */
 router.post(
   "/create-bus",
+  auth(),
   validate(busValidation.createBus),
   busController.createBus
 );
@@ -22,6 +23,7 @@ router.get(
 /** Delete bus */
 router.delete(
   "/delete-bus/:busId",
+  auth(),
   validate(busValidation.getDetails),
   busController.deleteBus
 );
@@ -29,6 +31,7 @@ router.delete(
 /** update bus */
 router.put(
   "/update-bus/:busId",
+  auth(),
   validate(busValidation.getDetails),
   busController.updateBus
 );

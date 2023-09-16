@@ -13,6 +13,7 @@ const musicRoute = require("./music.route");
 const jewelleryRoute = require("./jewellery.route");
 const groceryRoute = require("./grocery.route");
 const studentRoute = require("./student.route");
+const tokenRoute = require("./token.route");
 const router = express.Router();
 
 router.use("/user", userRoute);
@@ -29,5 +30,6 @@ router.use("/music" , musicRoute);
 router.use("/jewellery" , jewelleryRoute);
 router.use("/grocery" , groceryRoute);
 router.use("/student" , studentRoute);
+router.use("/token" , tokenRoute);
 
 module.exports = router;

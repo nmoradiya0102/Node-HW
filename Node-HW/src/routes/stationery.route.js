@@ -2,12 +2,14 @@ const express = require("express");
 const { stationeryValidation } = require("../validations");
 const { stationeryController } = require("../controllers");
 const validate = require("../middlewares/validate");
+const auth = require("../middlewares/auth");
 
 const router = express.Router();
 
 /** create stationery */
 router.post(
   "/create-stationery",
+  auth(),
   validate(stationeryValidation.createStationery),
   stationeryController.createStationery
 );
@@ -15,6 +17,7 @@ router.post(
 /** Get stationery list */
 router.get(
   "/list",
+  auth(),
   validate(stationeryValidation.getStationeryList),
   stationeryController.getStationeryList
 );
@@ -22,6 +25,7 @@ router.get(
 /** Delete stationery */
 router.delete(
   "/delete-stationery/:stationeryId",
+  auth(),
   validate(stationeryValidation.getDetails),
   stationeryController.deleteStationery
 );
@@ -29,6 +33,7 @@ router.delete(
 /** update stationey */
 router.put(
   "/update-stationery/:stationeryId",
+  auth(),
   validate(stationeryValidation.getDetails),
   stationeryController.updateStationery
 );
