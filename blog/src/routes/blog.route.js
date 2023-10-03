@@ -9,7 +9,7 @@ const router = express.Router();
 router.post(
   "/create-blog",
   validate(blogValidation.create_Blog),
-  blogController.create_Blog
+  blogController.createBlog
 );
 
 /** blog list */

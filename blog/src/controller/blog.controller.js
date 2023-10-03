@@ -1,10 +1,10 @@
 const { blogService } = require("../services");
 
 /** create Blog */
-const create_Blog = async (req, res) => {
+const createBlog = async (req, res) => {
   try {
     const reqBody = req.body;
-    const blog = await blogService.create_Blog(reqBody);
+    const blog = await blogService.create_Blog(reqBody)
     if (!blog) {
       throw new Error("Something went wrong..!");
     }
@@ -14,22 +14,13 @@ const create_Blog = async (req, res) => {
       data: { reqBody },
     });
   } catch (error) {
-    res.status(400).json({ success: false, message:  error.message});
+    res.status(400).json({ success: false, message: error.message});
   }
 };
 
 /** Get Blog list */
 const get_Blog_List = async (req, res) => {
   try {
-    const { search, ...options } = req.query;
-    let filter = {};
-
-    if (search) {
-      filter.$or = [
-        { blog_title: { $regex: search, $options: "i" } },
-        { blog_content : { $regex: search, $options: "i" } },
-      ];
-    }
     const getList = await blogService.get_Blog_List(filter, options);
 
     res.status(200).json({
@@ -50,7 +41,7 @@ const delete_Blog = async (req, res) => {
     if (!blogExists) {
       throw new Error("Blog not found..!");
     }
-    await blogService.deleteBlog(blogId);
+    await blogService.delete_Blog(blogId);
 
     res.status(200).json({
       success: true,
@@ -70,7 +61,7 @@ const update_Blog = async (req, res) => {
     if (!blogExists) {
       throw new Error("Blog not found..!");
     }
-    await blogService.updateDetails(blogId,reqBody);
+    await blogService.update_Blog(blogId,reqBody);
 
     res.status(200).json({
       success: true,
@@ -81,7 +72,7 @@ const update_Blog = async (req, res) => {
   }
 };
 module.exports = {
-  create_Blog,
+  createBlog,
   get_Blog_List,
   delete_Blog,
   update_Blog

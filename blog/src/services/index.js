@@ -1,1 +1,1 @@
-module.exports.blogServices = require("./blog.services");
+module.exports.blogService = require("./blog.services");
